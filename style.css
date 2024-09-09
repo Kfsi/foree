@@ -1,0 +1,106 @@
+/* تنسيق الجسم والخلفية */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('https://i.pinimg.com/564x/2e/bc/a7/2ebca77f26841d107620840c45d0e511.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+}
+
+/* تنسيق الحاوية */
+.container {
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+}
+
+/* منطقة المطر */
+#rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+/* تنسيق القطرات */
+.drop {
+    position: absolute;
+    white-space: nowrap;
+    opacity: 0.8;
+    will-change: transform;
+    animation: fall linear infinite;
+    font-family: 'Cursive', sans-serif;
+}
+
+/* حركة سقوط المطر */
+@keyframes fall {
+    0% {
+        transform: translateY(-100%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh);
+        opacity: 1;
+    }
+}
+
+/* تنسيق الأزرار */
+.buttons {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1;
+}
+
+.button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 2px solid #28a745;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* إخفاء زر التوقف في البداية */
+#stopButton {
+    display: none;
+}
+
+/* تنسيق صورة "صلي على النبي" */
+#image {
+    display: none;
+    margin-top: 20px;
+}
+
+#image img {
+    max-width: 100%;
+}
+
+/* حقوق الطبع */
+.copyright {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 28px; /* تكبير حجم الخط */
+    font-family: 'Georgia', serif; /* تغيير نوع الخط */
+    color: #fff;
+    z-index: 1;
+}
